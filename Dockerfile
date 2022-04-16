@@ -63,8 +63,9 @@ COPY --from=builder-base $PYSETUP_PATH $PYSETUP_PATH
 
 # quicker install as runtime deps are already installed
 RUN poetry install
-
+RUN groupadd -r appgroup && useradd -r -g appgroup appuser
 # will become mountpoint of our code
+USER appuser
 WORKDIR /fastapi-alliander
 COPY . .
 
