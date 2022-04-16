@@ -69,6 +69,6 @@ WORKDIR /fastapi-alliander
 COPY . .
 
 EXPOSE 8000
-CMD ["uvicorn", "--reload", "--host=0.0.0.0", "port=8000", "src.main:app"]
+CMD ["uvicorn", "src.main:app", "--reload", "--host=0.0.0.0", "--port=8000"]
 
 
