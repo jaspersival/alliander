@@ -1,6 +1,6 @@
 ARG PYTHON_VERSION=3.10.4
 
-FROM python:${PYTHON_VERSION}-bullseye as python-base
+FROM python:${PYTHON_VERSION}-slim-bullseye as python-base
 
 ARG POETRY_VERSION=1.1.13
     # python
