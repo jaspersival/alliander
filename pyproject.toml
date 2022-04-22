@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "alliander"
+name = "alliander-app"
 version = "0.1.0"
 description = "Setup to quickly start developing using Docker"
 authors = ["Jasper Sival"]

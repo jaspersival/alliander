@@ -66,7 +66,7 @@ RUN poetry install
 RUN groupadd -r appgroup && useradd -r -g appgroup appuser
 # will become mountpoint of our code
 USER appuser
-WORKDIR /fastapi-alliander
+WORKDIR /alliander-app
 COPY . .
 
 EXPOSE 8000
