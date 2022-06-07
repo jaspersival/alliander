@@ -46,7 +46,7 @@ RUN apt update \
 RUN curl -sSL https://install.python-poetry.org | python3 -
 # copy project requirement files here to ensure they will be cached.
 WORKDIR $PYSETUP_PATH
-COPY poetry.lock pyproject.toml ./
+COPY ../poetry.lock ../pyproject.toml ./
 
 # install runtime deps - uses $POETRY_VIRTUALENVS_IN_PROJECT internally
 RUN poetry install --no-dev
@@ -67,7 +67,7 @@ RUN groupadd -r appgroup && useradd -r -g appgroup appuser
 # will become mountpoint of our code
 USER appuser
 WORKDIR /alliander-app
-COPY . .
+COPY .. .
 
 EXPOSE 8000
 CMD ["uvicorn", "src.main:app", "--reload", "--host=0.0.0.0", "--port=8000"]
